@@ -1,0 +1,207 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Src="~/UserControl/ucMenu.ascx" TagPrefix="uc1" TagName="ucMenu" %>
+<%@ Register Src="~/UserControl/ucAccountHeader.ascx" TagPrefix="uc1" TagName="ucAccountHeader" %>
+<%@ Register Src="~/UserControl/ucMiniCart.ascx" TagPrefix="uc1" TagName="ucMiniCart" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="jquery.smartmenus.bootstrap-4.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Comfortaa|Lemonada&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link href="css/Style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" />
+
+        <header>
+            <div class="container">
+                <div class="navbar navbar-expand-md">
+                    <div class="container navbar-light bg-light ">
+                        <a class="navbar-branch" title="Vườn sen đá" href="Default.aspx">
+                            <img src="FileUpload/image/logo.jpg" height="60" />
+                        </a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarResponsive">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <%--AccountHeader--%>
+                                    <uc1:ucAccountHeader runat="server" ID="ucAccountHeader" />
+                                </li>
+                                <li>
+                                    <uc1:ucMiniCart runat="server" ID="ucMiniCart" />
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <uc1:ucMenu runat="server" ID="ucMenu" />
+
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12 clear-sm">
+                        <div class="widget-wrapper animated">
+                            <h5 class="title title_left">GIỚI THIỆU</h5>
+                            <div class="inner about_us">
+                                <p class="message">
+                                    Vườn sen đá cung cấp sen đá sỉ và lẻ số lượng lớn khu vực Bình
+                  Dương
+                                </p>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <i class="fa fa-home">108A, đường 21, Thuận Giao, Bình Dương
+                                        </i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-phone">0969905304
+                                        </i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12 clear-sm">
+                        <div class="widget-wrapper animated">
+                            <h5 class="title title_left">ĐĂNG KÝ NHẬN TIN</h5>
+                            <div class="inner">
+                                <div class="search">
+                                    <div class="input-group input-group-sm">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Nhập email của bạn"
+                                            aria-label="Recipient's username"
+                                            aria-describedby="basic-addon2" />
+                                        <div class="input-group-append">
+                                            <button class="btn btn-light" type="button">
+                                                <i class="fa fa-telegram"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    Hãy nhập email của bạn vào đây để nhận tin!
+                                </div>
+                            </div>
+                            <div class="social">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/profile.php?id=100006288817734">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 clear-sm">
+                        <div class="widget-wrapper animated">
+                            <h5 class="title title_left">KẾT NỐI VỚI CHÚNG TÔI</h5>
+
+                            <div class="inner">
+                                <!-- Facebook widget -->
+
+                                <div class="footer-static-content">
+                                    <div
+                                        class="fb-page fb_iframe_widget"
+                                        data-href="https://www.facebook.com/vuonsendadep/"
+                                        data-height="300"
+                                        data-small-header="false"
+                                        m data-adapt-container-width="true"
+                                        data-hide-cover="false"
+                                        data-show-facepile="true"
+                                        data-show-posts="false"
+                                        fb-xfbml-state="rendered"
+                                        fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=360&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fvuonsenda&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false">
+                                        <span
+                                            style="vertical-align: bottom; width: 340px; height: 214px;">
+                                            <iframe
+                                                name="f3d256504ab7314"
+                                                title="fb:page Facebook Social Plugin"
+                                                frameborder="0"
+                                                allowtransparency="true"
+                                                allowfullscreen="true"
+                                                scrolling="no"
+                                                allow="encrypted-media"
+                                                src="https://www.facebook.com/v3.2/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D45%23cb%3Df19f2c398568478%26domain%3Dwww.vuonsenda.vn%26origin%3Dhttps%253A%252F%252Fwww.vuonsenda.vn%252Ff2b5b04b9b0da9c%26relation%3Dparent.parent&amp;container_width=360&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fvuonsenda&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false"
+                                                style="border: none; visibility: visible; width: 340px; height: 214px;"
+                                                class=""></iframe>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+
+                                <!-- #Facebook widget -->
+                                <script>
+                                    (function (d, s, id) {
+                                        var js,
+                                            fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) return;
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src =
+                                            '//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=263266547210244&version=v2.0';
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    })(document, 'script', 'facebook-jssdk');
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <asp:ContentPlaceHolder ID="foot" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

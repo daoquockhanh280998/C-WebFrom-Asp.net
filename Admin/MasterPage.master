@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Admin_MasterPage" %>
+
+<%@ Register Src="~/Admin/UserControl/ucScriptAdmin.ascx" TagPrefix="uc1" TagName="ucScriptAdmin" %>
+<%@ Register Src="~/Admin/UserControl/ucAdminInfo.ascx" TagPrefix="uc1" TagName="ucAdminInfo" %>
+<%@ Register Src="~/Admin/UserControl/ucMenu.ascx" TagPrefix="uc1" TagName="ucMenu" %>
+<%@ Register Src="~/Admin/UserControl/ucCss.ascx" TagPrefix="uc1" TagName="ucCss" %>
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <%--ucCss--%>
+    <uc1:ucCss runat="server" ID="ucCss" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="animsition">
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" />
+        <div class="page-wrapper">
+            <!-- HEADER MOBILE-->
+            <header class="header-mobile d-block d-lg-none">
+                <div class="header-mobile__bar">
+                    <div class="container-fluid">
+                        <div class="header-mobile-inner">
+                            <a class="logo" href="Default.aspx">
+                                <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            </a>
+                            <button class="hamburger hamburger--slider" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- MENU SIDEBAR-->
+            <aside class="menu-sidebar d-none d-lg-block">
+                <div class="logo">
+                    <a href="Default.aspx">
+                        <img src="images/icon/logo.png" alt="Cool Admin" />
+                    </a>
+                </div>
+                <div class="menu-sidebar-content js-scrollbar1">
+                    <%--ucMenu--%>
+                    <uc1:ucMenu runat="server" ID="ucMenu" />
+
+                </div>
+            </aside>
+            <!-- END MENU SIDEBAR-->
+            <!-- PAGE CONTAINER-->
+            <div class="page-container">
+                <!-- HEADER DESKTOP-->
+                <%--ucAdminInfo--%>
+                <uc1:ucAdminInfo runat="server" ID="ucAdminInfo" />
+
+                <!--content admin-->
+
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+
+        </div>
+        <asp:ContentPlaceHolder ID="foot" runat="server">
+            <uc1:ucScriptAdmin runat="server" ID="ucScriptAdmin" />
+
+        </asp:ContentPlaceHolder>
+
+    </form>
+</body>
+</html>
