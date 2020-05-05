@@ -41,19 +41,19 @@
                                                     <a href='<%# Eval("ProductID","/ProductDetail.aspx?id={0}") %>' class="invarseColor">
                                                         <%# Eval("Title") %></a>
                                                 </div>
-                                                <div class="thumbPrice">
-                                                    <span><%# Eval("Price") %>
-                                                        <span class="strike-through"></span>
-                                                    </span>
-                                                </div>
-                                                <div class="thumbButtons">
-                                                    <asp:LinkButton ID="LinkButton_AddToCart" OnClick="LinkButton_AddToCart_Click"
-                                                        CommandArgument='<%# Eval("ProductID") %>' OnClientClick="alert('Đã Thêm Vào Giỏ Hàng')"
-                                                        runat="server" class="btn btn-primary btn-small" >
+                                            </div>
+                                            <div class="thumbPrice">
+                                                <span><%# Eval("Price") %>
+                                                    <span class="strike-through"></span>
+                                                </span>
+                                            </div>
+                                            <div class="thumbButtons">
+                                                <asp:LinkButton ID="LinkButton_AddToCart" OnClick="LinkButton_AddToCart_Click"
+                                                    CommandArgument='<%# Eval("ProductID") %>' OnClientClick="alert('Đã Thêm Vào Giỏ Hàng')"
+                                                    runat="server" class="btn btn-primary btn-small">
                                                          <i class="fa fa-shopping-cart"></i>
                                                         Thêm vào giỏ hàng
-                                                    </asp:LinkButton>
-                                                </div>
+                                                </asp:LinkButton>
                                             </div>
                                         </li>
                                     </ItemTemplate>

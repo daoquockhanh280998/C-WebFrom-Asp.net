@@ -30,8 +30,8 @@
                             thông qua các bước đặt hàng đơn giản
                     </p>
                     <h5>Đầu Tiên Quý Khách Hãy Đăng Nhập Tài Khoản Nếu Chưa Có Tài Khoản Hãy Đăng Ký</h5>
-                     <img class="col-12" src="FileUpload/image/cachthanhtoan/4.PNG" />
-
+                      <img class="col-12" src="FileUpload/image/huongdanmuahang/1.PNG" />
+                     <img class="col-12" src="FileUpload/image/huongdanmuahang/2.PNG" />
                     <p>
                         Vui lòng tham khảo thông tin chi tiết về từng bước đặt hàng như
                             sau:
@@ -40,7 +40,7 @@
                     <p>Quý khách có thể tìm sản phẩm theo 3 cách:</p>
                     <p>1. Gõ tên sản phẩm vào thanh tìm kiếm</p>
                     <p>2. Tìm theo danh mục sản phẩm</p>
-                    <img class="col-12" src="FileUpload/image/cachthanhtoan/1.PNG" />
+                    <img class="col-12" src="FileUpload/image/huongdanmuahang/3.PNG" />
                     <h5>2. Thêm sản phẩm vào giỏ hàng</h5>
                     <p>
                         Khi đã tìm được sản phẩm mong muốn, quý khách vui lòng bấm vào
@@ -50,7 +50,7 @@
                     <p>a. Chọn loại chậu mong muốn</p>
                     <p>b. Chọn số lượng mong muốn.</p>
                     <p>c. Thêm sản phẩm vào giỏ hàng.</p>
-                    <img class="col-12" src="FileUpload/image/cachthanhtoan/3.PNG" />
+                    <img class="col-12" src="Admin/images/no_image.png" />
                     <h5>3. Kiểm tra giỏ hàng và đặt hàng</h5>
                     <p>
                         Để đặt nhiều sản phẩm khác nhau vào cùng 1 đơn hàng, vui lòng
@@ -76,14 +76,14 @@
                             v.v...)
                     </p>
                     <p>e. Bấm "Thanh toán" để bắt đầu đặt hàng.</p>
-                   <img class="col-12" src="FileUpload/image/cachthanhtoan/9.PNG" />
+                   <img class="col-12" src="FileUpload/image/huongdanmuahang/5.PNG" />
                     <h5>4. Đăng nhập hoặc đăng ký tài khoản</h5>
                     <p>
                         Quý khách vui lòng đăng nhập bằng tài khoản đã có ở Vuonsenda.
                             Trong trường hợp chưa đăng ký tài khoản, quý khách chỉ điền
                             thông tin cần thiết theo mẫu.
                     </p>
-                    <img class="col-12" src="FileUpload/image/cachthanhtoan/5.PNG" />
+                     <img class="col-12" src="FileUpload/image/huongdanmuahang/6.PNG" />
                     <h5>6. Chọn phương thức thanh toán, nhập mã giảm giá (nếu có) và
                             "Đặt Mua"
                     </h5>
@@ -98,10 +98,10 @@
                             "Hoàn tất đơn hàng", hệ thống sẽ bắt đầu tiến hành tạo đơn hàng
                             dựa trên các thông tin quý khách đã đăng ký.
                     </p>
-                    <img class="col-12" src="FileUpload/image/cachthanhtoan/7.PNG" />
-                    <img class="col-12" src="FileUpload/image/cachthanhtoan/6.PNG" />
+                     <img class="col-12" src="FileUpload/image/huongdanmuahang/7.PNG" />
+                     <img class="col-12" src="FileUpload/image/huongdanmuahang/8.PNG" />
                     <h5>7. Sao Khi Đã Điền Đầy Đủ Thông Tin Hãy Chọn Nút Hoàn Tất Đơn Hàng Để Hoàn Thành Đơn Hàng</h5>
-                    <img class="col-12" src="FileUpload/image/cachthanhtoan/8.PNG" />
+                     <img class="col-12" src="FileUpload/image/huongdanmuahang/9.PNG" />
                 </div>
                 <div class="tab-pane fade" id="tab-payment-guide">
                     <h3>hướng dẫn thanh toán</h3>
@@ -118,18 +118,18 @@
                     </p>
                     <h5>B1: Truy Cập Vào <span class="tab-pane_nganluong">nganluong.vn</span> </h5>
                     <p>
-                        <img src="FileUpload/image/thanhtoannganluong/1.PNG" />
+                        <img src="FileUpload/image/huongdanthanhtoan/1.PNG" />
 
                     </p>
                     <h5>B2: Đăng Kí Tài Khoản Và Đăng Nhập </h5>
                     <p>
-                        <img src="FileUpload/image/thanhtoannganluong/2.PNG" />
-                        <img src="FileUpload/image/thanhtoannganluong/3.PNG" />
+                        <img src="FileUpload/image/huongdanthanhtoan/2.PNG" />
+                        <img src="FileUpload/image/huongdanthanhtoan/3.PNG" />
                     </p>
                     <h5>B3: Vào Phần Ví Ngân Lượng Chọn Cách Hình Thức Nạp Tiền Vào Ví </h5>
                     <p>
 
-                        <img src="FileUpload/image/thanhtoannganluong/4.PNG" />
+                        <img src="FileUpload/image/huongdanthanhtoan/4.PNG" />
 
                     </p>
                     <p>Lưu Ý : Hãy Xác Thực Tài Khoản Mới Có Thể Nạp Tiền</p>

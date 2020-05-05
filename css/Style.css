@@ -1712,6 +1712,7 @@ nav {
 }
 
     .styled_foot .title-line {
+        margin-left: 54px;
         text-transform: uppercase;
     }
 
@@ -2414,3 +2415,181 @@ nav {
 .modal-body table tbody{
     max-height: 100px !important;
 }
+
+.scrollable {
+    height:200px;
+    overflow:auto;
+}
+
+/*#region product-list */
+.product-list {
+    margin-top: 50px;
+    min-height: 570px;
+}
+
+    .product-list .row ul {
+        margin-right: 45px;
+    }
+
+        .product-list .row ul li {
+            float: left;
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+    .product-list .row .buttonMain {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+        .product-list .row .buttonMain .btn {
+            border: 1px solid #ced4da;
+            border-radius: 3px;
+            text-transform: uppercase;
+            padding: 5px 20px;
+            background: #ebebeb;
+        }
+
+            .product-list .row .buttonMain .btn:hover {
+                background: #82d6b2;
+            }
+
+            .product-list .row .buttonMain .btn a {
+                font-weight: 400;
+                font-size: 18px;
+                text-decoration: none;
+                color: #000;
+            }
+/*#endregion */
+
+/*#region thumbnail */
+.thumbnail {
+}
+
+    .thumbnail img {
+        height: 149px;
+        width: 100%;
+    }
+
+        .thumbnail img:hover {
+            transform: scale(1.2);
+            transition: 1s;
+        }
+
+    .thumbnail .product-sale {
+        padding: 1px 5px !important;
+        position: absolute;
+        font-size: 12px;
+        line-height: 16px;
+        background-color: #e37d7d;
+        border: none;
+        top: 0;
+        left: 0;
+        color: #fff;
+        z-index: 1;
+    }
+
+/*#endregion */
+
+/*#region thumbSetting */
+.thumbSetting {
+    text-align: center;
+    margin-top: 10px;
+    height: 38px;
+    font-size: 14px;
+}
+
+    .thumbSetting .thumbTitle {
+    }
+
+        .thumbSetting .thumbTitle a {
+            font-weight: 500;
+            color: #2c4f20;
+            text-decoration: none;
+        }
+
+            .thumbSetting .thumbTitle a:hover {
+                color: #82d6b2;
+            }
+/*#endregion */
+
+/*#region thumbPrice */
+.thumbPrice {
+    margin-top: 7px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #82d6b2;
+}
+
+    .thumbPrice .strike-through {
+        color: #999;
+        text-decoration: line-through;
+    }
+
+.thumbButtons {
+    text-align: center;
+}
+
+    .thumbButtons .btn {
+        background: #82d6b2;
+        border: 1px solid #808080;
+    }
+
+        .thumbButtons .btn:hover {
+            background: #427c63;
+        }
+/*#endregion */
+
+
+/*#region pagination */
+.pagination {
+    margin: 5px 0 5px 5px;
+}
+
+    .pagination ul {
+        display: flex;
+        margin-left: 30px;
+    }
+
+        .pagination ul li {
+            text-align: center;
+            border: 1px solid rgba(153, 153, 153, 0.44);
+            list-style: none;
+            width: 30px;
+            color: #000;
+            background-color: #fff;
+        }
+
+            .pagination ul li.active,
+            .pagination ul li:hover {
+                background-color: rgba(47, 196, 63, 0.72);
+            }
+
+            .pagination ul li a {
+                color: #000;
+            }
+
+.main-content .workplace .block-fluid .bl .search {
+    display: flex;
+}
+
+    .main-content .workplace .block-fluid .bl .search input {
+    }
+
+    .main-content .workplace .block-fluid .bl .search .link-search {
+        margin-left: 0;
+        margin-top: 0;
+        width: 50px;
+    }
+
+.dataTables_length {
+    margin-top: -4px;
+}
+
+.form-select textarea {
+    width: 80%;
+    height: auto;
+}
+/*#endregion */

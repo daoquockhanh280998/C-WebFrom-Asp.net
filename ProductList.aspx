@@ -37,7 +37,8 @@
                                         <a href="ProductDetail.html" class="invarseColor">
                                             <%# Eval("Title") %></a>
                                     </div>
-                                    <div class="thumbPrice">
+                                </div>
+                                 <div class="thumbPrice">
                                         <span><%# Eval("Price") %>
                                             <span class="strike-through"></span>
                                         </span>
@@ -48,7 +49,6 @@
                                             Thêm vào giỏ hàng
                                         </button>
                                     </div>
-                                </div>
                             </li>
                         </ItemTemplate>
                     </asp:Repeater>

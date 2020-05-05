@@ -128,4 +128,5 @@ public partial class ProductDetail : System.Web.UI.Page
             SessionUtility.Cart.CartItems[productID].Quantity += 1;
         }
     }
+
 }

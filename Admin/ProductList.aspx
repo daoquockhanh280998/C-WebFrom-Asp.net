@@ -73,7 +73,7 @@
                                     </th>
                                     <th width="80px" class="center">Mã số
                                     </th>
-                                    <th width="200px" class="center">Hình
+                                    <th width="150px" class="center">Hình
                                     </th>
                                     <th width="80px" class="center">Giá Cũ
                                     </th>
@@ -83,7 +83,7 @@
                                     </th>
                                     <th width="80px" class="center">Số lượng
                                     </th>
-                                    <th width="170px" class="center">Người đăng /Ngày
+                                    <th width="70px" class="center">Người đăng /Ngày
                                     </th>
                                     <th width="100px" class="center">Xem / Xóa / Sửa
                                     </th>
