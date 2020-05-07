@@ -7,6 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     <uc1:ucMessage runat="server" ID="ucMessage" />
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="foot" Runat="Server">
 </asp:Content>

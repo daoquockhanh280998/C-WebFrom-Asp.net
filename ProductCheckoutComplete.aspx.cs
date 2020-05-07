@@ -24,8 +24,64 @@ public partial class ProductCheckoutComplete : System.Web.UI.Page
             //Nếu khách chọn trả tiền tại nhà
             if (paymentMethod == 0)
             {
-                ucMessage.ShowSuccess("Xin chúc mừng, đơn hàng của bạn đã được lập. Bạn có thể thanh toán sau khi nhận được hàng tại nhà. <a href='OrderDetail.aspx'>xem Đơn Hàng</a>");
+                ucMessage.ShowSuccess("Xin chúc mừng, đơn hàng của bạn đã được lập. Bạn có thể thanh toán sau khi nhận được hàng tại nhà. <a href='OrderDetail.aspx'>xem Đơn Hàng Tại Đây</a> Hoặc Quý Khách Hãy Vào Email Của Mình Để Kiểm Tra");
+                DBEntities db = new DBEntities();
+                var order = db.Orders.Where(o => o.OrderID == orderID).FirstOrDefault();
+                //Gửi một email xác nhận đơn hàng đã thanh toán cho khách
+                string fullname = order.FullName;
+                string ID = order.Code + order.OrderID;
+                string date = order.CreateTime.ToString();
+                int payment = order.PaymentMethod.ToInt();
+                int phone = order.Mobi.ToInt();
+                int phone2 = order.Mobi2.ToInt();
+                string address = order.Address;
+                string email = order.Email;
+                //gửi email
+                MailUtility emailItem = new MailUtility();
+                emailItem.From = "chuvanan258vn@gmail.com";
+                emailItem.Password = "0797891220";
+
+                emailItem.To = "daoquockhanh280998@gmail.com";
+                emailItem.Subject = "Thư liên hệ ngày: "
+                                    + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                emailItem.Port = 587;
+                emailItem.Host = "smtp.gmail.com";
+                emailItem.EnableSSL = true;
+                emailItem.IsBodyHtml = true;
+
+                string emailBody = string.Empty;
+                emailBody += "Chủ Đề: Xác Nhận Đặt Hàng " + "<br>";
+                emailBody += "Kính chào quý khách: " + fullname + "<br>";
+                emailBody += "VườnSenĐáBD vừa nhận được <p>đơn hàng:  </p>" + ID + "của quý khách đặt hàng vào ngày: " + date;
+                emailBody += "Nội dung:Chúng Tôi Gửi Đến quý khánh lá thư này nhầm xác nhận việc đặt hàng của quý khách " + "<br>";
+                if (payment == 0)
+                {
+                    emailBody += "Hình Thức Thanh Toán Là: Thanh Toán Qua Ngân Lượng " + "<br>";
+                }
+                else
+                {
+                    emailBody += "Hình Thức Thanh Toán Là: Thanh Toán Tại Nhà " + "<br>";
+                }
+
+                emailBody += "SĐT 1: " + phone + "<br>";
+                emailBody += "SĐT 2: " + phone2 + "<br>";
+                emailBody += "Địa Chỉ Giao Hàng: " + address + "<br>";
+                emailBody += "Vào lúc: "
+                                + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+                emailItem.Body = emailBody;
+
+                try
+                {
+                    emailItem.SendMail();
+                }
+                catch (Exception ex)
+                {
+                    ucMessage.ShowError("Không gửi được email, hãy thử lại sau");
+                    return;
+                }
                 SessionUtility.Cart.CartItems.Clear();
+
             }
             else //Thanh toán trực tuyến tại ngân lượng
             {
@@ -50,7 +106,58 @@ public partial class ProductCheckoutComplete : System.Web.UI.Page
                 }
 
                 //Gửi một email xác nhận đơn hàng đã thanh toán cho khách
-                //Tự nghiên cứu
+                string fullname = order.FullName;
+                string ID = order.Code + order.OrderID;
+                string date = order.CreateTime.ToString();
+                int payment = order.PaymentMethod.ToInt();
+                int phone = order.Mobi.ToInt();
+                int phone2 = order.Mobi2.ToInt();
+                string address = order.Address;
+                string email = order.Email;
+                //gửi email
+                MailUtility emailItem = new MailUtility();
+                emailItem.From = "chuvanan258vn@gmail.com";
+                emailItem.Password = "0797891220";
+
+                emailItem.To = "daoquockhanh280998@gmail.com";
+                emailItem.Subject = "Thư liên hệ ngày: "
+                                    + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                emailItem.Port = 587;
+                emailItem.Host = "smtp.gmail.com";
+                emailItem.EnableSSL = true;
+                emailItem.IsBodyHtml = true;
+
+                string emailBody = string.Empty;
+                emailBody += "Chủ Đề: Xác Nhận Đặt Hàng " + "<br>";
+                emailBody += "Kính chào quý khách: " + fullname + "<br>";
+                emailBody += "VườnSenĐáBD vừa nhận được <p>đơn hàng:  </p>" + ID + "của quý khách đặt hàng vào ngày: " + date ;
+                emailBody += "Nội dung:Chúng Tôi Gửi Đến quý khánh lá thư này nhầm xác nhận việc đặt hàng của quý khách " + "<br>";
+                if (payment == 0)
+                {
+                    emailBody += "Hình Thức Thanh Toán Là: Thanh Toán Qua Ngân Lượng "  + "<br>";
+                }
+                else
+                {
+                    emailBody += "Hình Thức Thanh Toán Là: Thanh Toán Tại Nhà " + "<br>";
+                }
+
+                emailBody += "SĐT 1: " + phone + "<br>";
+                emailBody += "SĐT 2: " + phone2 + "<br>";
+                emailBody += "Địa Chỉ Giao Hàng: " + address + "<br>";
+                emailBody += "Vào lúc: "
+                                + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+                emailItem.Body = emailBody;
+
+                try
+                {
+                    emailItem.SendMail();
+                }
+                catch (Exception ex)
+                {
+                    ucMessage.ShowError("Không gửi được email, hãy thử lại sau");
+                    return;
+                }
 
                 return;
             }
