@@ -27,27 +27,21 @@
                             <li class="col-md-3 col-sm-6 col-12">
                                 <div class="thumbnail ">
                                     <div class="carousel-inner">
-                                        <a href="ProductDetail.html">
+                                        <a href='<%# Eval("ProductID","/ProductDetail.aspx?id={0}") %>'>
                                             <img src='<%# Eval("Avatar") %>' /></a>
                                         <span class=" product-sale"></span>
                                     </div>
                                 </div>
                                 <div class="thumbSetting">
                                     <div class="thumbTitle">
-                                        <a href="ProductDetail.html" class="invarseColor">
+                                        <a href='<%# Eval("ProductID","/ProductDetail.aspx?id={0}") %>' class="invarseColor">
                                             <%# Eval("Title") %></a>
                                     </div>
                                 </div>
                                  <div class="thumbPrice">
-                                        <span><%# Eval("Price") %>
+                                        <span><%# Eval("Price","{0:0,00}") %>Đ
                                             <span class="strike-through"></span>
                                         </span>
-                                    </div>
-                                    <div class="thumbButtons">
-                                        <button class="btn btn-primary btn-small">
-                                            <i class="fa fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </button>
                                     </div>
                             </li>
                         </ItemTemplate>

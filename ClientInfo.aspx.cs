@@ -40,6 +40,9 @@ public partial class Default2 : System.Web.UI.Page
 
     }
 
-
-
+    protected void LinkButton_Logout_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("/");
+    }
 }

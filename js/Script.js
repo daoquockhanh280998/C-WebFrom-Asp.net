@@ -19,9 +19,9 @@
         var index = e.to;
 
         // Bỏ chọn active trên tất cả hình thumb
-        $("#main-carousel .thumb .col").removeClass("active");
+        $("#main-carousel .thumb .coll").removeClass("active");
         //Tìm hình thumb tại vị trí mới, active nó
-        $("#main-carousel .thumb .col").eq(index).addClass("active");
+        $("#main-carousel .thumb .coll").eq(index).addClass("active");
 
 
     })

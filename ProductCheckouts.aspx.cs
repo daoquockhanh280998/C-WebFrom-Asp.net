@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -88,6 +89,11 @@ public partial class _Default : System.Web.UI.Page
         LoadData();
     }
 
+    public bool IsNumber(string pText)
+    {
+        Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+        return regex.IsMatch(pText);
+    }
     protected void LinkButton_Remove_Click(object sender, EventArgs e)
     {
         LinkButton LinkButton_Remove = sender as LinkButton;
@@ -118,14 +124,14 @@ public partial class _Default : System.Web.UI.Page
             ucMessage.ShowError("Mời Nhập Họ Tên ");
             return;
         }
-        if (mobi.IsNullOrEmptyOrWhiteSpaces())
+        if (mobi.IsNullOrEmptyOrWhiteSpaces() || IsNumber(mobi) == false )
         {
-            ucMessage.ShowError("Mời Nhập Số Điện Thoại");
+            ucMessage.ShowError("Quý Khách Chưa Nhập Số Điện Thoại hoặc Nhập Sai Số Điện Thoại");
             return;
         }
-        if (mobi2.IsNullOrEmptyOrWhiteSpaces())
+        if (mobi2.IsNullOrEmptyOrWhiteSpaces() || IsNumber(mobi2) == false)
         {
-            ucMessage.ShowError("Mời Nhập Số Điện Thoại 2");
+            ucMessage.ShowError("Quý Khách Chưa Nhập Số Điện Thoại 2 hoặc Nhập Sai Số Điện Thoại");
             return;
         }
 

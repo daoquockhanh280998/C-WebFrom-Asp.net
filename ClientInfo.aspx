@@ -45,11 +45,7 @@
                                     <span>Địa Chỉ: </span><span runat="server" id="span_Address" class="info_group">address</span>
                                 </li>
                             </ul>
-
-                            <button type="button" class="toggle-btn col-md-5 col-12">
-                                Đăng xuất
-                            </button>
-
+                             <asp:LinkButton class="toggle-btn col-md-5 col-12" Text="Đăng Xuất" ID="LinkButton_Logout" OnClick="LinkButton_Logout_Click" runat="server" />
                             <a href="ClientRepair.aspx" class="toggle-btn col-md-5 col-12">Chỉnh Sửa Tài Khoản
                             </a>
                         </div>
