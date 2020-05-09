@@ -78,10 +78,10 @@
                                             <h5>1 <span>Đã bán</span></h5>
                                         </div>
                                     </div>
-                                    <p><%# Eval("Price","{0:0,00}") %></p>
+                                    <p></p>
                                     <p>
-                                        <span class="strike-throughs">180,000đ</span>
-                                        150,000đ
+                                        <span class="strike-throughs"><%# Eval("OldPrice","{0:0,00}") %>đ</span>
+                                       <%# Eval("Price","{0:0,00}") %>đ
                                     </p>
                                 </div>
                             </address>
@@ -96,10 +96,13 @@
 
                                             <asp:LinkButton ID="LinkButton_AddToCart" OnClick="LinkButton_AddToCart_Click"
                                                 CommandArgument='<%# Eval("ProductID") %>' OnClientClick="alert('Đã Thêm Vào Giỏ Hàng')"
-                                                runat="server" class="btn btn-plus" data-toggle="modal" data-target=".bd-example-modal-xl">
+                                                runat="server" class="btn btn-plus" >
                                                          <i class="fa fa-cart-plus"></i>
                                                         Thêm vào giỏ hàng
                                             </asp:LinkButton>
+
+                                           
+
                                             <%--<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl" role="document">
                                                     <div class="modal-content">
@@ -1022,9 +1025,9 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-            <div class="row">
-                <div class="Related-product">
-                    <div class="col-md-12">
+           
+                <div class="Related-product row">
+                    <div class="col-md-10">
                         <aside class="styled_foot">
                             <div class="title-line">
                                 <h4>Các sản phẩm liên quan:</h4>
@@ -1064,7 +1067,7 @@
                         </asp:Repeater>
                     </ul>
                 </div>
-                <div class="UnRelated-product">
+                <div class="UnRelated-product row">
                     <div class="col-md-12">
                         <aside class="styled_foot">
                             <div class="title-line">
@@ -1105,7 +1108,6 @@
                         </asp:Repeater>
                     </ul>
                 </div>
-            </div>
         </div>
     </div>
 </asp:Content>

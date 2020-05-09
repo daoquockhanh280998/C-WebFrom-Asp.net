@@ -12,7 +12,7 @@
                 <table class="table table-sm">
                     <thead>
                         <tr>
-                            <th class="image">&nbsp</th>
+                            <th class="image">Hình Ảnh</th>
                             <th class="item">Tên sản phẩm</th>
                             <th class="qty">Số lượng</th>
                             <th class="price">Giá Cũ</th>

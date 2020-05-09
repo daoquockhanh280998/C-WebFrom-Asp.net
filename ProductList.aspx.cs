@@ -63,7 +63,7 @@ public partial class ProductList : System.Web.UI.Page
             page = 1;
         int totalItems = query.Count();
         // .: Lưu ý sửa lại link cho đúng với trang và điều kiện thực tế của mỗi trang :. \\
-        string url = "~/ProductList.aspx?mid={0}&cid={1}&page={2}".StringFormat(mid, cid, "{0}");
+        string url = "~/ProductList.aspx?mid={0}&cid={1}&phukien={2}&page={3}".StringFormat(mid, cid,PhuKien, "{0}");
         ucPagging.TotalItems = totalItems;
         ucPagging.CurrentPage = page;
         ucPagging.PageSize = pageSize;

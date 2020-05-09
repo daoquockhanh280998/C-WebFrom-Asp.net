@@ -46,15 +46,10 @@
                             <input runat="server" id="input_Mobi"
                                 type="text"
                                 class="input-field"
-                                placeholder="SĐT: 0969905304"
+                                placeholder="SĐT: "
                                 title="Số điện thoại"
                                 required />
-                              <input runat="server" id="input_Mob2"
-                                type="text"
-                                class="input-field"
-                                placeholder="SĐT: 0969905304"
-                                title="Số điện thoại 2"
-                                required />
+                           
 
                              <input runat="server" id="input_Gender"
                                 type="text"

@@ -9,7 +9,6 @@
             <li class="nav-item">
                 <a
                     class="nav-link active"
-
                     href="#tab-information-guide">Thông tin tài khoản
                 </a>
             </li>
@@ -28,24 +27,28 @@
                             <i class="fa fa-user-circle-o"></i>
                         </div>
                         <div id="information" class="input-group">
-                            <ul>
-                                <li>
-                                    <span>Email: </span><span runat="server" id="span_Email" class="info_group">Email</span>
-                                </li>
-                                <li>
-                                    <span>Họ tên: </span><span runat="server" id="span_FullName" class="info_group">Full Name</span>
-                                </li>
-                                <li>
-                                    <span>Số điện thoại: </span><span runat="server" id="span_Mobi" class="info_group">Mobi</span>
-                                </li>
-                                <li>
-                                    <span>Giới Tính: </span><span runat="server" id="span_Gender" class="info_group">gender</span>
-                                </li>
-                                <li>
-                                    <span>Địa Chỉ: </span><span runat="server" id="span_Address" class="info_group">address</span>
-                                </li>
-                            </ul>
-                             <asp:LinkButton class="toggle-btn col-md-5 col-12" Text="Đăng Xuất" ID="LinkButton_Logout" OnClick="LinkButton_Logout_Click" runat="server" />
+                            <asp:Repeater ID="Repeater_Main" runat="server">
+                                <ItemTemplate>
+                                    <ul>
+                                        <li>
+                                            <span>Email: </span><span class="info_group"><%# Eval("Email") %></span>
+                                        </li>
+                                        <li>
+                                            <span>Họ tên: </span><span class="info_group"><%# Eval("FullName") %></span>
+                                        </li>
+                                        <li>
+                                            <span>Số điện thoại: </span><span class="info_group"><%# Eval("Mobi") %></span>
+                                        </li>
+                                        <li>
+                                            <span>Giới Tính: </span><span class="info_group"><%# Eval("Gender").ToBool() == true ? "Nam" : "Nữ"  %></span>
+                                        </li>
+                                        <li>
+                                            <span>Địa Chỉ: </span><span class="info_group"><%# Eval("Address") %></span>
+                                        </li>
+                                    </ul>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            <asp:LinkButton class="toggle-btn col-md-5 col-12" Text="Đăng Xuất" ID="LinkButton_Logout" OnClick="LinkButton_Logout_Click" runat="server" />
                             <a href="ClientRepair.aspx" class="toggle-btn col-md-5 col-12">Chỉnh Sửa Tài Khoản
                             </a>
                         </div>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -27,30 +28,37 @@ public partial class Default2 : System.Web.UI.Page
 
     public void LoadData()
     {
+        string email = SessionUtility.Cart.Email;
+        DBEntities db = new DBEntities();
+        var data = db.Clients.Where(x => x.Email == email).FirstOrDefault();
+        
 
-        input_Email.Value = SessionUtility.Cart.Email;
-        input_Fullname.Value = SessionUtility.Cart.FullName;
-        if (SessionUtility.Cart.Mobi == 0)
+        input_Email.Value = data.Email;
+        input_Fullname.Value = data.FullName;
+        if (data.Mobi == string.Empty)
         {
             input_Mobi.Value = string.Empty;
-        }
-        if (SessionUtility.Cart.Mobi2 == 0)
-        {
-            input_Mobi.Value = string.Empty;
-        }
-
-        if (SessionUtility.Cart.Gender == true)
-        {
-            input_Gender.Value = "Nữ";
         }
         else
         {
+            input_Mobi.Value = data.Mobi;
+        }
+        if (data.Gender == true)
+        {
             input_Gender.Value = "Nam";
         }
-        input_Address.Value = SessionUtility.Cart.Address;
+        else
+        {
+            input_Gender.Value = "Nữ";
+        }
+        input_Address.Value = data.Address;
     }
 
-
+    public bool IsNumber(string pText)
+    {
+        Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+        return regex.IsMatch(pText);
+    }
 
 
     protected void LinkButton_Update_Click(object sender, EventArgs e)
@@ -72,16 +80,12 @@ public partial class Default2 : System.Web.UI.Page
             ucMessage.ShowError("Bạn Phải Nhập Họ Và Tên");
             return;
         }
-        if (input_Mobi.Value == string.Empty)
+        if (input_Mobi.Value == string.Empty || IsNumber(input_Mobi.Value) == false)
         {
-            ucMessage.ShowError("Bạn Phải Nhập Số Điện Thoại 1 ");
+            ucMessage.ShowError("Bạn Chưa Nhập Số Điện Thoại <br /> Hoặc Bạn Nhập Sai Định Dạng Số Điện Thoại  ");
             return;
         }
-        if (input_Mob2.Value == string.Empty)
-        {
-            ucMessage.ShowError("Bạn Phải Nhập Số Điện Thoại 2 ");
-            return;
-        }
+      
 
         if (input_Address.Value == string.Empty)
         {

@@ -35,6 +35,7 @@ public partial class ProductDetail : System.Web.UI.Page
                         p.Avatar,
                         p.ImagesList,
                         p.Price,
+                        p.OldPrice,
                         p.Dercription,
                         p.Thumb
                     };
@@ -128,5 +129,7 @@ public partial class ProductDetail : System.Web.UI.Page
             SessionUtility.Cart.CartItems[productID].Quantity += 1;
         }
     }
+
+
 
 }

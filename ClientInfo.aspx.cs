@@ -24,18 +24,22 @@ public partial class Default2 : System.Web.UI.Page
         }
         else
         {
-            span_Email.InnerHtml = SessionUtility.Client.Email;
-            span_FullName.InnerHtml = SessionUtility.Client.FullName;
-            span_Mobi.InnerHtml = SessionUtility.Client.Mobi.ToString();
-            if (SessionUtility.Client.Gender == true)
-            {
-                span_Gender.InnerHtml = "Nam";
-            }
-            else
-            {
-                span_Gender.InnerHtml = "Nữ";
-            }
-            span_Address.InnerHtml = SessionUtility.Client.Address;
+            string email = SessionUtility.Cart.Email;
+            DBEntities db = new DBEntities();
+            var data = from c in db.Clients
+                       where c.Email == email
+                       select new
+                       {
+                           c.ClientID,
+                           c.Email,
+                           c.FullName,
+                           c.Mobi,
+                           c.Address,
+                           c.Gender
+                       };
+
+            Repeater_Main.DataSource = data.Take(1).ToList();
+            Repeater_Main.DataBind();
         }
 
     }

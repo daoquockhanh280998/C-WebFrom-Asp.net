@@ -679,6 +679,8 @@
 
 /*#region checkout*/
 #checkout {
+    text-align:center;
+    text-decoration:none;
     float: right;
     margin-left: 15px;
     margin-bottom: 15px;
@@ -1612,6 +1614,8 @@ nav {
         }
 
         .profile-card .input-group .toggle-btn {
+            text-align:center;
+            text-decoration:none;
             cursor: pointer;
             display: block;
             margin-top: 12px !important;
@@ -3215,4 +3219,12 @@ nav {
     font-family: sans-serif;
     padding-bottom: 0;
     margin-bottom: 0;
+}
+.Related-product {
+    width: 83%;
+    margin-left: 109px;
+}
+.UnRelated-product {
+    width: 83%;
+    margin-left: 109px;
 }
