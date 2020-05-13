@@ -43,7 +43,7 @@ public partial class Admin_Default : System.Web.UI.Page
         }
         DBEntities db = new DBEntities();
         var item = db.Accounts.Where(x => x.Username == username).FirstOrDefault();
-        // if item = null thì
+        // if item = null thì báo lỗi
         if (item == null)
         {
             ucMessage.ShowError("Tài Khoản NÀY Không Tồn Tại. <a href='/Admin/AccountList.aspx'>Xem Danh Sách</a>");

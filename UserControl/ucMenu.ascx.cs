@@ -31,7 +31,7 @@ public partial class ucMenu : System.Web.UI.UserControl
                                    c.Title
                                })
                     };
-        Repeater_Main.DataSource = query.Take(5).ToList();
+        Repeater_Main.DataSource = query.ToList();
         Repeater_Main.DataBind();
     }
 }

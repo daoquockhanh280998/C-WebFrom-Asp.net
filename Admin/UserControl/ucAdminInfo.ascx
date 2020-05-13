@@ -148,11 +148,11 @@
                                 </div>
                                 <div class="account-dropdown__body">
                                     <div class="account-dropdown__item">
-                                        <a runat="server" id="a_Info_AccountEdit" href="AccountEdit.aspx?id=admin">
+                                        <a runat="server" id="a_Info_AccountEdit" href="AccountEdit.aspx">
                                             <i class="zmdi zmdi-account"></i>Account</a>
                                     </div>
                                     <div class="account-dropdown__item">
-                                        <a runat="server" id="a_Info_PasswordChange" href="AccountPasswordChange.aspx?id=admin">
+                                        <a runat="server" id="a_Info_PasswordChange" href="AccountPasswordChange.aspx">
                                             <i class="zmdi zmdi-settings"></i>Change PassWord</a>
                                     </div>
                                 </div>

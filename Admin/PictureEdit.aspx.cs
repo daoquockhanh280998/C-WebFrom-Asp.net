@@ -104,22 +104,7 @@ public partial class Admin_Default : System.Web.UI.Page
                 return;
             }
 
-            //kiểm tra có nhập dữ liệu vào ô chưa
-            if (input_Position.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Vị Trí");
-                return;
-            }
-            if (input_Title.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Tiêu Đề");
-                return;
-            }
-            if (textarea_Decription.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Mô Tả");
-                return;
-            }
+           
 
             // nhập các thông tin mới
             item.PictureCategoryID = DropDownList_Category.SelectedValue.ToInt();
@@ -168,22 +153,7 @@ public partial class Admin_Default : System.Web.UI.Page
         {
             Picture item = new Picture();
 
-            //kiểm tra nhập dữ liệu vào ô chưa và kiểm tra tiêu đề k rỗng
-            if (input_Title.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Tiêu Đề");
-                return;
-            }
-            if (input_Position.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Vị trí");
-                return;
-            }
-            if (textarea_Decription.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Mô tả");
-                return;
-            }
+           
 
             // nhập các thông tin mới
             item.PictureCategoryID = DropDownList_Category.SelectedValue.ToInt();

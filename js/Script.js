@@ -7,7 +7,7 @@
     $("#navbarSupportedContent .dropdown-menu .dropdown").each(function () {
         var childCount = $(this).find("li").length;
         console.log(childCount);
-        if (childCount == 1) {
+        if (childCount <= 1) {
             $(this).find("ul").remove();
             $(this).find("a p i").remove();
         }

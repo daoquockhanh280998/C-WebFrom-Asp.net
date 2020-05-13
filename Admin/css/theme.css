@@ -14407,7 +14407,7 @@ section {
     .main-content .workplace .block-fluid table a {
         text-align: left;
         text-decoration: none;
-        color: #11998e;
+        
     }
 
     .main-content .workplace .block-fluid table .about {
@@ -14624,5 +14624,12 @@ section {
 .form-select textarea {
     width: 80%;
     height:auto;
+}
+
+.active-Green{
+    color:green;
+}
+.lock-Red {
+    color: red;
 }
         /*#endregion */

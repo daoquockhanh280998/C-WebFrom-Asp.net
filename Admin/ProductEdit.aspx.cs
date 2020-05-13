@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -86,6 +87,11 @@ public partial class Admin_ProductCategoryList : System.Web.UI.Page
         input_CreateTime.Value = item.CreateTime.ToString();
 
     }
+    public bool IsNumber(string pText)
+    {
+        Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+        return regex.IsMatch(pText);
+    }
 
     protected void DropDownList_Category_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -114,14 +120,14 @@ public partial class Admin_ProductCategoryList : System.Web.UI.Page
                 ucMessage.ShowError("Mời Nhập Tiêu Đề");
                 return;
             }
-            if (input_OldPrice.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Giá Mặc Định Của Sản Phẩm");
-                return;
-            }
             if (input_Price.Value.Trim().IsNullOrEmpty())
             {
                 ucMessage.ShowError("Mời Nhập Giá Bán Của Sản Phẩm");
+                return;
+            }
+            if (IsNumber(input_Price.Value) == false || IsNumber(input_OldPrice.Value) == false)
+            {
+                ucMessage.ShowError("Bạn Nhập Sai Giá Sản Phẩm");
                 return;
             }
             if (textarea_Decription.Value.Trim().IsNullOrEmpty())
@@ -187,14 +193,14 @@ public partial class Admin_ProductCategoryList : System.Web.UI.Page
                 ucMessage.ShowError("Mời Nhập Tiêu Đề");
                 return;
             }
-            if (input_OldPrice.Value.Trim().IsNullOrEmpty())
-            {
-                ucMessage.ShowError("Mời Nhập Giá Mặc Định Của Sản Phẩm");
-                return;
-            }
             if (input_Price.Value.Trim().IsNullOrEmpty())
             {
-                ucMessage.ShowError("Mời Nhập Giá Bán Của Sản Phẩm");
+                ucMessage.ShowError("Mời Nhập Giá Mới Của Sản Phẩm");
+                return;
+            }
+            if (IsNumber(input_Price.Value) == false || IsNumber(input_OldPrice.Value) == false)
+            {
+                ucMessage.ShowError("Bạn Nhập Sai Giá Sản Phẩm");
                 return;
             }
             if (textarea_Decription.Value.Trim().IsNullOrEmpty())

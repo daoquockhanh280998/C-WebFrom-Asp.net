@@ -112,11 +112,11 @@
                                                 <p>Địa Chỉ:<%# Eval("Address") %></p>
                                             </td>
                                             <td class="center middle">
-                                                <p><%# Eval("Total") %></p>
+                                                <p><%# Eval("Total","{0:0,00}") %>đ</p>
                                                 <%--<p>(<%# Eval("ChargeStatus").ToBool() == true ? "Đã Thanh Toán" : "Chưa Thanh Toán" %>)</p>--%>
                                                 <div class="ChargeStatus">
                                                     <asp:LinkButton ID="LinkButton_ChargeStatus" OnClick="LinkButton_ChargeStatus_Click" CommandArgument='<%# Eval("OrderID") %>' runat="server"
-                                                        class='<%# Eval("ChargeStatus").ToBool() == true ? "btn active btn-block" : "btn lock btn-block" %>'>
+                                                        class='<%# Eval("ChargeStatus").ToBool() == true ? "btn active active-Green btn-block" : "btn lock lock-Red btn-block" %>'>
                                                             <i class='<%# Eval("ChargeStatus").ToBool() == true ? "fas fa-check" : "fas fa-lock" %>' style="padding-right: 5px;"></i>
                                                             <%# Eval("ChargeStatus").ToBool() == true ? "Đã Thanh Toán" : "Chưa Thanh Toán" %>
                                                     </asp:LinkButton>
@@ -129,7 +129,7 @@
                                                 <%-- <%# Eval("DeliverStatus").ToBool() == true ? "Đã Giao Hàng" : "Chưa Giao Hàng" %>--%>
                                                 <div class="DeliverStatus">
                                                     <asp:LinkButton ID="LinkButton_DeliverStatus" OnClick="LinkButton_DeliverStatus_Click" CommandArgument='<%# Eval("OrderID") %>' runat="server"
-                                                        class='<%# Eval("DeliverStatus").ToBool() == true ? "btn active btn-block" : "btn lock btn-block" %>'>
+                                                        class='<%# Eval("DeliverStatus").ToBool() == true ? "btn active active-Green btn-block" : "btn lock lock-Red btn-block" %>'>
                                                             <i class='<%# Eval("DeliverStatus").ToBool() == true ? "fas fa-check" : "fas fa-lock" %>' style="padding-right: 5px;"></i>
                                                             <%# Eval("DeliverStatus").ToBool() == true ? "Đã Giao Hàng" : "Chưa Giao Hàng" %>
                                                     </asp:LinkButton>
